@@ -1,65 +1,35 @@
-# MEN Stack with OAuth Template
+# Music Shelf
+  This is a social-media-esque site that allows you to create albums, add songs and essentially share your music tastes!
 
-This is a MEN Stack template that includes OAuth.
+  As someone who's held music near and dear to them, I firmly believe music really shows what kind of person you might be interacting with! Thus the idea of social media + music just made sense (no we're not a myspace clone haha).
 
-Use this to go build things! 🚀
+## DEPLOYABLE LINK (Coming soon)
+  [Music Shelf](placeholder)
 
-## To Use This Template
+## SCREENSHOTS (Coming Soon)
+  ![image](Placeholder)
+  ![image](Placeholder)
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+## TECHNOLOGIES
+  -HTML
 
-Once you are in the project directory:
+  -CSS
 
-```bash
-rm -rf .git
-```
+  -JavaScript
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+  -EJS
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+  -MEN Stack
 
-Re-initialize a git repository:
+  -git
 
-```bash
-git init
-```
+  -[Planning Materials](https://trello.com/b/CXi2xTJF/music-shelf-board)
 
-Create a repo for this project on GitHub and add that remote to your project with `git remote add origin Your-repo-URL-here`.
 
-Run npm i to fetch the template's dependencies:
+## PLANNED ITEMS
+  --Login with spotify
 
-```bash
-npm i
-```
+  --Friends List
 
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this `README.md` file and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+  --Instant Messaging
