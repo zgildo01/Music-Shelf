@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 /* The Universal Selector */
@@ -9,20 +10,23 @@ html {
   /* All ::after pseudo-elements */
   /* height & width will now include border & padding by default but can be overridden as needed */
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #1a1a1a;
-  color: #f6f6f6;
+  background-color: #01cdfe;
+  color: #fffb96;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
+  height: 100%;
 }
 
 nav {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  background-color: #ff71ce;
+  color: #fffb96;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -34,4 +38,5 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
 }
