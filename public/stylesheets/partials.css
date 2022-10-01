@@ -35,7 +35,3 @@ main {
   justify-content: center;
   flex-direction: column;
 }
-
-.right {
-  margin-left: auto;
-}
