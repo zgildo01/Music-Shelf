@@ -5,6 +5,11 @@
 }
 
 #about {
-  display: flex;
-  justify-content: center;
+  margin-top: 15rem;
+  font-size: 3rem;
+}
+
+#welcome {
+  margin-top: 3rem;
+  font-size: 1.1rem;
 }

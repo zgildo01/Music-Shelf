@@ -7,7 +7,6 @@ html {
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
 *::after {
-  /* All ::after pseudo-elements */
   /* height & width will now include border & padding by default but can be overridden as needed */
   box-sizing: inherit;
   margin: 0;
@@ -35,8 +34,9 @@ nav {
 
 main {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   height: 100%;
+  background-image: url("../../resources/imgs/neat-background.png");
+  background-position: center;
+  background-size: cover;
 }
