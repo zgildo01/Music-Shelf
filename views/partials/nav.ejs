@@ -5,24 +5,46 @@
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
+      <div id="google-logout">
+        <img 
+        src="./images/logout-fren.gif"
+        alt="sad ascii wave"
+        />
+        <a href="/auth/logout">
+          <button type="submit">Logout</button>
+        </a>
+    </div>
     <% } else { %>
-      <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-      ></div>
-      <div 
-        class="g_id_signin right"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
+      <div id="google-login">
+        <img 
+        src="./images/login-fren.gif"
+        alt="friendly ascii wave"
+        />
+        <div 
+          id="g_id_onload"
+          data-client_id="<%= googleClientID %>"
+          data-login_uri="/auth/google"
+          data-auto_prompt="false"
+        ></div>
+        <div 
+          class="g_id_signin right"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="sign_in_with"
+          data-shape="rectangular"
+          data-logo_alignment="left"
+        ></div>
+      </div>
     <% } %>
+    <a>
+      Add Album
+    </a>
+    <h1>Music Shelf</h1>
+    <a>
+      View Profile
+    </a>
+    <a>
+      View Users
+    </a>
   </nav>
