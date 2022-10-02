@@ -65,9 +65,20 @@ footer {
 #google-logout {
   display: flex;
   flex-direction: column;
+  align-content: center;
 }
 
 #copyright {
   display: flex;
   align-items: center
+}
+
+#login-fren {
+  height: 2rem;
+  width: 10rem;
+}
+
+#logout-fren{
+  height: 2rem;
+  width: 10rem;
 }
