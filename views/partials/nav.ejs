@@ -17,8 +17,9 @@
     <% } else { %>
       <div id="google-login">
         <img 
-        src="../public/images/login-fren.gif"
+        src="../images/login-fren.gif"
         alt="friendly ascii wave"
+        id=""
         />
         <div 
           id="g_id_onload"
@@ -37,13 +38,19 @@
         ></div>
       </div>
     <% } %>
-    <a>
+    <a 
+    href="/album/new"
+    >
       Add Album
     </a>
-    <a>
+    <a
+    href="/profiles/<%= user?.profile._id %>"
+    >
       View Profile
     </a>
-    <a>
+    <a
+    href="/profiles/"
+    >
       View Users
     </a>
   </nav>
