@@ -2,9 +2,20 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const albumSchema = new Schema({
+  albumName: String,
+  artistName: String,
+  releaseDate: Date,
+  owner: {
+    type: Schema.Types.ObjectId, 
+    ref:'Profile'
+  }
+})
+
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  albums: [albumSchema]
 }, {
   timestamps: true
 })
