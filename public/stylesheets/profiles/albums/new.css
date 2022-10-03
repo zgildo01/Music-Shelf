@@ -1,0 +1,29 @@
+main {
+  font-family: 'Press Start 2P', cursive;
+}
+
+#add-album {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 352px));
+  font-size: 20px;
+  margin-top: 10rem;
+}
+
+form * {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+form > button {
+  grid-column: span 2;
+  width: 160px;
+  margin-left: auto;
+  font-size: 22px;
+}

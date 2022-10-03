@@ -30,7 +30,18 @@ function show(req, res) {
   })
 }
 
+function addAlbum(req, res) {
+  Profile.find({})
+  .then(profile => {
+    res.render('profiles/albums/new', {
+      title: "Add new album",
+      profile,
+    })
+  })
+}
+
 export {
   index,
   show,
+  addAlbum,
 }

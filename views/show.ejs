@@ -12,7 +12,7 @@
   </div>
 
   <h1> <%= `${profile.name}'s profile` %> </h1>
-  <p></p>
+  
 
   <% if (profile.albums.length) {%>
     <table>
@@ -49,7 +49,9 @@
   </table>
     <% } else { %>
       <h3 id="no-albums">No Albums Yet :/</h3>
+      <p>Consider adding one?</p>
     <% } %>
+    
 </main>
 
 <%- include('../partials/footer') %>
