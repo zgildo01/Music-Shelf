@@ -2,14 +2,6 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const commentSchema = new Schema({
-  content: String,
-  commenter: {
-    type: Schema.Types.ObjectId,
-    ref: 'Profile'
-  }
-})
-
 const albumSchema = new Schema({
   albumName: String,
   artistName: String,
@@ -18,7 +10,6 @@ const albumSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Profile"
   }],
-  comments: [commentSchema]
 }, {
   timestamps: true
 })
@@ -26,7 +17,7 @@ const albumSchema = new Schema({
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  albums: [albumSchema]
+  albums: [albumSchema],
 }, {
   timestamps: true
 })

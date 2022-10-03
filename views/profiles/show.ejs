@@ -10,7 +10,46 @@
     alt="<%= profile.name %>'s avatar"
     >
   </div>
-  <h1> <%= isSelf ? "Your" : `${profile.name}'s profile` %> </h1>
+
+  <h1> <%= `${profile.name}'s profile` %> </h1>
+  <p></p>
+
+  <% if (profile.albums.length) {%>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Album Name</th>
+          <th>Artist Name</th>
+          <th>Release Date</th>
+        </tr>
+      </thead>
+    <tbody>
+      <% profile.albums.forEach(album => { %>
+        <tr>
+          <td>
+            <a href="/profile/<%= album._id %>">Show Airline</a>
+          </td>
+          <td>
+            <form 
+        action="/profiles/<%= album._id %>?_method=DELETE" 
+        method="POST"
+        class="delete-form"
+            >
+              <button type="submit">Delete Album</button>
+            </form>
+          </td>
+          <td><%= album.albumName %></td>
+          <td><%= album.artistName %></td>
+          <td><%= album.releaseDate %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+    <% } else { %>
+      <h3 id="no-albums">No Albums Yet :/</h3>
+    <% } %>
 </main>
 
 <%- include('../partials/footer') %>

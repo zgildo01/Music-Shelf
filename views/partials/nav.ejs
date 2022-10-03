@@ -15,10 +15,20 @@
           <button type="submit">Logout</button>
         </a>
     </div>
+    <a 
+    href="/profiles/album/new"
+    >
+      Add Album
+    </a>
     <a
     href="/profiles/<%= user?.profile._id %>"
     >
       View Profile
+    </a>
+    <a
+    href="/profiles/"
+    >
+      View Users
     </a>
     <% } else { %>
       <div id="google-login">
@@ -44,9 +54,4 @@
         ></div>
       </div>
     <% } %>
-    <a
-    href="/profiles/"
-    >
-      View Users
-    </a>
   </nav>
