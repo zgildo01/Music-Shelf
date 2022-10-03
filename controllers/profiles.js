@@ -70,16 +70,13 @@ function deleteAlbum(req, res) {
 }
 
 function showAlbum(req, res) {
-  Profile.findById(req.params.id)
-  .then(profiles => {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const embeddedAlbum = profile.albums.id(req.params.albumsId)
     res.render('albums/show', {
       title: 'Album Details',
-      profiles,
+      album: embeddedAlbum,
     })
-  })
-  .catch(error => {
-    console.log("my error, no yo:", err)
-    res.redirect('/')
   })
 }
 

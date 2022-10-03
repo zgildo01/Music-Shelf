@@ -7,7 +7,7 @@ const router = Router()
 router.get('/', profilesCtrl.index)
 router.get('/:id', profilesCtrl.show)
 router.get('/:id/albums/new', isLoggedIn, profilesCtrl.addAlbum)
-router.get('/albums/:id', profilesCtrl.showAlbum)
+router.get('/:profileId/albums/:albumsId', profilesCtrl.showAlbum)
 router.post('/:id/albums', isLoggedIn, profilesCtrl.createAlbum)
 router.delete('/albums/:id', isLoggedIn, profilesCtrl.deleteAlbum)
 

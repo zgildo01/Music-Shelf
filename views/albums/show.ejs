@@ -1,1 +1,24 @@
-<h1>SHOW AN ALBUM</h1>
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/albums/new.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Album Name:</div>
+    <div>
+      <%= album.albumName %>
+      <a href="/album/<%= album._id %>/edit">
+      <button>Edit Album</button>
+      </a>
+    </div>
+    <div>Artist Name:</div>
+    <div><%= album.artistName %></div>
+    <div>Track Number:</div>
+    <div><%= album.trackNo %></div>
+    <div>Release Date:</div>
+    <div><%= album.releaseDate %></div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
