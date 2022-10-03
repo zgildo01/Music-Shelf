@@ -94,6 +94,17 @@ function editAlbum(req, res) {
   })
 }
 
+function updateAlbum(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const embeddedAlbum = profile.albums.id(req.params.albumsId)
+    embeddedAlbum.updateOne(req.body)
+    .then(() => {
+      res.redirect('/')
+    })
+  })
+}
+
 
 export {
   index,
@@ -103,4 +114,5 @@ export {
   deleteAlbum,
   showAlbum,
   editAlbum,
+  updateAlbum
 }

@@ -4,7 +4,7 @@
 <main>
   <h1 id="add-album"><%= title %></h1>
   <form 
-  action="/profiles/<%= user.profile._id %>/albums" 
+  action="/profiles/<%= profile._id %>/albums/<%= album._id %>?_method=PUT" 
   method="post"
   >
     <label for="album-name">Album Name:</label>
@@ -13,7 +13,7 @@
     <input type="text" name="artistName" id="artist-name" min="1">
     <label for="release-date">Release Date:</label>
     <input type="date" name="releaseDate" id="release-date">
-    <button type="submit">Add Album</button>
+    <button type="submit">Edit Album</button>
   </form>
 </main>
 <%- include('../partials/footer')  %> 

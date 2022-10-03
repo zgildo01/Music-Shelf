@@ -11,6 +11,7 @@ router.get('/:profileId/albums/:albumsId', profilesCtrl.showAlbum)
 router.get('/:profileId/albums/:albumsId/edit', isLoggedIn, profilesCtrl.editAlbum)
 router.post('/:id/albums', isLoggedIn, profilesCtrl.createAlbum)
 router.delete('/albums/:id', isLoggedIn, profilesCtrl.deleteAlbum)
+router.put('/:profileId/albums/:albumsId', isLoggedIn, profilesCtrl.updateAlbum)
 
 
 export {
