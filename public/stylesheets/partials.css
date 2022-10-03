@@ -44,6 +44,8 @@ main {
   background-image: url("../images/neat-background.png");
   background-position: center;
   background-size: cover;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
 }
 
 footer {
