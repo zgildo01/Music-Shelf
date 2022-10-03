@@ -98,10 +98,19 @@ function updateAlbum(req, res) {
   Profile.findById(req.params.profileId)
   .then(profile => {
     const embeddedAlbum = profile.albums.id(req.params.albumsId)
-    embeddedAlbum.updateOne(req.body)
+    embeddedAlbum.set(req.body)
+    profile.save()
     .then(() => {
-      res.redirect('/')
+      res.redirect(`/profiles/${req.params.profileId}`)
     })
+    .catch(err =>{
+      console.log(err)
+      res.redirect(`/profiles/${req.params.profileId}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.params.profileId}`)
   })
 }
 
