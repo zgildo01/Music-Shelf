@@ -8,7 +8,9 @@
     <div>Album Name:</div>
     <div>
       <%= album.albumName %>
-      <a href="/album/<%= album._id %>/edit">
+      <a
+      href="/profiles/<%= profile._id %>/albums/<%= album._id %>/edit"
+      >
       <button>Edit Album</button>
       </a>
     </div>

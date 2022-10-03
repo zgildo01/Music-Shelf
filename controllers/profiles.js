@@ -76,6 +76,20 @@ function showAlbum(req, res) {
     res.render('albums/show', {
       title: 'Album Details',
       album: embeddedAlbum,
+      profile,
+    })
+  })
+}
+
+
+function editAlbum(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const embeddedAlbum = profile.albums.id(req.params.albumsId)
+    res.render('albums/edit', {
+      title: 'Edit Album',
+      album: embeddedAlbum,
+      profile,
     })
   })
 }
@@ -88,4 +102,5 @@ export {
   createAlbum,
   deleteAlbum,
   showAlbum,
+  editAlbum,
 }
