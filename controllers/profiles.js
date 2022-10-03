@@ -33,10 +33,24 @@ function show(req, res) {
 function addAlbum(req, res) {
   Profile.find({})
   .then(profile => {
-    res.render('profiles/albums/new', {
+    res.render('albums/new', {
       title: "Add new album",
       profile,
     })
+  })
+}
+
+function createAlbum(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.albums.push(req.body)
+    profile.save()
+    console.log(profile)
+    res.redirect(`/profiles/${req.user.profile._id}/`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles/')
   })
 }
 
@@ -44,4 +58,5 @@ export {
   index,
   show,
   addAlbum,
+  createAlbum,
 }

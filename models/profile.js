@@ -2,13 +2,21 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const commentSchema = new Schema({
+  content: String,
+  commenter: {
+    type: Schema.Types.ObjectId,
+    ref: 'Profile',
+  }
+})
+
 const albumSchema = new Schema({
   albumName: String,
   artistName: String,
   releaseDate: Date,
   songs: [{
     type: Schema.Types.ObjectId,
-    ref: "Profile"
+    ref: "Song"
   }],
 }, {
   timestamps: true
@@ -18,6 +26,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   albums: [albumSchema],
+  comments: [commentSchema,]
 }, {
   timestamps: true
 })
