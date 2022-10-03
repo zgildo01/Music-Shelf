@@ -1,4 +1,5 @@
 import { Profile } from "../models/profile.js";
+import { Song } from "../models/song.js";
 
 function index(req, res) {
   Profile.find({})
@@ -18,10 +19,16 @@ function show(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
-    res.render('profiles/show', {
-      title: `${ profile.name }'s profile`,
-      profile,
-      isSelf,
+    const embeddedAlbum = profile.albums.id(req.params.albumsId)
+    .populate('songs')
+    Song.find({_id: {$nin: profile.songs}})
+    .then(songs => {
+      res.render('profiles/show', {
+        title: `${ profile.name }'s profile`,
+        profile,
+        isSelf,
+        songs,
+      })
     })
   })
   .catch(err => {

@@ -6,14 +6,16 @@
   <h1 id="title"><%= title %></h1>
   <section id="album-details">
     <div>Album Name:</div>
-    <div>
-      <%= album.albumName %>
-      <a
-      href="/profiles/<%= profile._id %>/albums/<%= album._id %>/edit"
-      >
-      <button>Edit Album</button>
-      </a>
-    </div>
+    <% if (isSelf) { %>
+      <div>
+        <%= album.albumName %>
+        <a
+        href="/profiles/<%= profile._id %>/albums/<%= album._id %>/edit"
+        >
+        <button>Edit Album</button>
+        </a>
+      </div>
+    <% } %>
     <div>Artist Name:</div>
     <div><%= album.artistName %></div>
     <div>Track Number:</div>
@@ -24,13 +26,21 @@
     <a
     href="/songs/new"
     >
-      Add Song
+      <button>Add Song</button>>
     </a>
+    <form id="add-per-to-cast" action="/profiles/<%= profile._id %>/songs" method="POST">
+      <select name="songId">
+        <% songs.forEach(song => { %>
+          <option value="<%= song._id %>"><%= song.songName %></option>
+        <% }) %>
+      </select>
+      <button type="submit">Add to Meals</button>
+    </form>
     <% } %>
   </section>
   <section>
     <% if (album.songs.length) { %>
-      
+      <h2>Songs:</h2>
     <% } else { %>
       <h2>No Songs Yet :/</h2>
       <% if (isSelf) { %>
