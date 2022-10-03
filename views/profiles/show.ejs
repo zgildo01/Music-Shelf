@@ -22,7 +22,6 @@
           <% if (isSelf) {%> 
             <th></th>
           <% } %> 
-          <th></th>
           <th>Album Name</th>
           <th>Artist Name</th>
           <th>Release Date</th>
@@ -32,7 +31,7 @@
       <% profile.albums.forEach(album => { %>
         <tr>
           <td>
-            <a href="/profile/albums/<%= album._id %>">Show Album</a>
+            <a href="/profiles/albums/<%= album._id %>">Show Album</a>
           </td>
           <td>
           <% if (isSelf) { %>
@@ -51,10 +50,10 @@
       <% }) %>
     </tbody>
   </table>
-    <% } else { %>
-      <h3 id="no-albums">No Albums Yet :/</h3>
-      <%= isSelf ? "Consider adding one?" : "" %> 
-    <% } %>
+  <% } else { %>
+    <h3 id="no-albums">No Albums Yet :/</h3>
+    <%= isSelf ? "Consider adding one?" : "" %> 
+  <% } %>
     
 </main>
 

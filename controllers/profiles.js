@@ -69,10 +69,26 @@ function deleteAlbum(req, res) {
   })
 }
 
+function showAlbum(req, res) {
+  Profile.findById(req.params.id)
+  .then(profiles => {
+    res.render('albums/show', {
+      title: 'Album Details',
+      profiles,
+    })
+  })
+  .catch(error => {
+    console.log("my error, no yo:", err)
+    res.redirect('/')
+  })
+}
+
+
 export {
   index,
   show,
   addAlbum,
   createAlbum,
   deleteAlbum,
+  showAlbum,
 }
