@@ -19,6 +19,9 @@
       <thead>
         <tr>
           <th></th>
+          <% if (isSelf) {%> 
+            <th></th>
+          <% } %> 
           <th></th>
           <th>Album Name</th>
           <th>Artist Name</th>
@@ -29,16 +32,17 @@
       <% profile.albums.forEach(album => { %>
         <tr>
           <td>
-            <a href="/profile/<%= album._id %>">Show Album</a>
+            <a href="/profile/albums/<%= album._id %>">Show Album</a>
           </td>
           <td>
-            <form 
-        action="/profiles/<%= album._id %>?_method=DELETE" 
-        method="POST"
-        class="delete-form"
+          <% if (isSelf) { %>
+            <form
+            action="/profiles/albums/<%= album._id %>?_method=DELETE"
+            method="post"
             >
-              <button type="submit">Delete Album</button>
+              <button type="submit">Delete Album?</button>
             </form>
+            <% } %>
           </td>
           <td><%= album.albumName %></td>
           <td><%= album.artistName %></td>
@@ -49,7 +53,7 @@
   </table>
     <% } else { %>
       <h3 id="no-albums">No Albums Yet :/</h3>
-      <p>Consider adding one?</p>
+      <%= isSelf ? "Consider adding one?" : "" %> 
     <% } %>
     
 </main>
