@@ -72,11 +72,13 @@ function deleteAlbum(req, res) {
 function showAlbum(req, res) {
   Profile.findById(req.params.profileId)
   .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
     const embeddedAlbum = profile.albums.id(req.params.albumsId)
     res.render('albums/show', {
       title: 'Album Details',
       album: embeddedAlbum,
       profile,
+      isSelf,
     })
   })
 }

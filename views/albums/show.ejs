@@ -20,6 +20,23 @@
     <div><%= album.trackNo %></div>
     <div>Release Date:</div>
     <div><%= album.releaseDate %></div>
+    <% if (isSelf) { %>
+    <a
+    href="/songs/new"
+    >
+      Add Song
+    </a>
+    <% } %>
+  </section>
+  <section>
+    <% if (album.songs.length) { %>
+      
+    <% } else { %>
+      <h2>No Songs Yet :/</h2>
+      <% if (isSelf) { %>
+        <p>Maybe add some?</p>
+      <% } %>
+    <% } %> 
   </section>
 </main>
 
