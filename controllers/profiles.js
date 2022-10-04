@@ -78,12 +78,19 @@ function showAlbum(req, res) {
     const embeddedAlbum = profile.albums.id(req.params.albumsId)
     Song.find({_id: {$nin: profile.albums.songs}})
     .then(songs => {
+      let myMusic = []
+      songs.forEach(song => {
+        if(song.addedBy.equals(req.user.profile._id)){
+          myMusic.push(song)
+        }
+      })
       res.render('albums/show', {
         title: 'Album Details',
         album: embeddedAlbum,
         profile,
         isSelf,
         songs,
+        myMusic,
       })
     })
   })

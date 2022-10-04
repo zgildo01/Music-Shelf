@@ -33,7 +33,7 @@
     method="POST"
     >
       <select name="songId">
-        <% songs.forEach(song => { %>
+        <% myMusic.forEach(song => { %>
           <option value="<%= song._id %>"><%= song.songName %></option>
         <% }) %>
       </select>
