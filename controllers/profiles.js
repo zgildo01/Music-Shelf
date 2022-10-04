@@ -122,6 +122,17 @@ function updateAlbum(req, res) {
   })
 }
 
+function addToSongs(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const embeddedAlbum = profile.albums.id(req.params.albumsId)
+    embeddedAlbum.songs.push(req.body.songId)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.params.profileId}/albums/${req.params.albumsId}`)
+    })
+  })
+}
 
 export {
   index,
@@ -131,5 +142,6 @@ export {
   deleteAlbum,
   showAlbum,
   editAlbum,
-  updateAlbum
+  updateAlbum,
+  addToSongs,
 }

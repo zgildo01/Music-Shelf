@@ -1,4 +1,3 @@
-import { Profile } from "../models/profile.js";
 import { Song } from "../models/song.js";
 
 function newSong(req, res) {

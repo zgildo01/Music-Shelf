@@ -28,7 +28,10 @@
     >
       <button>Add Song</button>
     </a>
-    <form id="add-song" action="/profiles/<%= profile._id %>/songs" method="POST">
+    <form id="add-song" 
+    action="/profiles/<%= profile._id %>/albums/<%= album._id %>/songs" 
+    method="POST"
+    >
       <select name="songId">
         <% songs.forEach(song => { %>
           <option value="<%= song._id %>"><%= song.songName %></option>
@@ -40,6 +43,7 @@
   </section>
   <section>
     <% if (album.songs.length) { %>
+
       <h2>Songs:</h2>
       <% album.songs.forEach((song)=> { %>
         <table>
@@ -53,6 +57,7 @@
           </tbody>
         </table>
       <% }) %>
+      
     <% } else { %>
 
       <h2>No Songs Yet :/</h2>
