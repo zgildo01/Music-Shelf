@@ -24,7 +24,7 @@
     <div><%= album.releaseDate %></div>
     <% if (isSelf) { %>
     <a
-    href="/songs/new"
+    href="/songs/new/<%= album._id %>"
     >
       <button>Add Song</button>
     </a>
@@ -60,11 +60,12 @@
             <tr>
               <% if (isSelf) { %>
                 <td>
-                  <a
-                  href="songs/:id"
+                  <form
+                  action="/songs/<%= song._id %>/<%= album._id %>?_method=DELETE"
+                  method="POST"
                   >
-                    <button>Delete Song?</button>
-                  </a>
+                    <button>Delete Song</button>
+                  </form>
                 </td>
               <% } %>
               <td><%= song.songName %></td>

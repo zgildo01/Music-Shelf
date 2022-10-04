@@ -26,7 +26,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   albums: [albumSchema],
-  comments: [commentSchema,]
+  comments: [commentSchema],
 }, {
   timestamps: true
 })
