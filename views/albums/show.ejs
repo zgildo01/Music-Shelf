@@ -44,16 +44,20 @@
   <section>
     <% if (album.songs.length) { %>
 
-      <h2>Songs:</h2>
       <% album.songs.forEach((song)=> { %>
         <table>
+          <caption>Songs:</caption>
           <thead>
-            <td>Song Name:</td>
-            <td>Track Number:</td>
+            <tr>
+              <td>Song Name:</td>
+              <td>Track Number:</td>
+            </tr>
           </thead>
           <tbody>
-            <tr><%= song.songName %></tr>
-            <tr><%= song.trackNo %></tr>
+            <tr>
+              <td><%= song.songName %></td>
+              <td><%= song.trackNo %></td>
+            </tr>
           </tbody>
         </table>
       <% }) %>

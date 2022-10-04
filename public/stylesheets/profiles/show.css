@@ -11,3 +11,9 @@ main {
 #no-albums {
   margin-top: 10rem;
 }
+
+table {
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
