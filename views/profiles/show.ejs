@@ -79,7 +79,7 @@
         <p><%= comment.content %></p>
         <% if (isSelf) { %>
           <form
-          action=""
+          action="/profiles/<%= profile._id %>/comments/<%= comment._id %>?_method=DELETE"
           method="post"
           >
           <button type="submit">Delete Comment</button>

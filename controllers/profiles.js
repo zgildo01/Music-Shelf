@@ -162,6 +162,21 @@ function newComment(req, res) {
   })
 }
 
+function deleteComment(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.comments.remove({_id: req.params.id})
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   show,
@@ -173,4 +188,5 @@ export {
   updateAlbum,
   addToSongs,
   newComment,
+  deleteComment,
 }

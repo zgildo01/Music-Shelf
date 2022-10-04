@@ -14,6 +14,7 @@ router.delete('/albums/:id', isLoggedIn, profilesCtrl.deleteAlbum)
 router.put('/:profileId/albums/:albumsId', isLoggedIn, profilesCtrl.updateAlbum)
 router.post('/:profileId/albums/:albumsId/songs', isLoggedIn, profilesCtrl.addToSongs)
 router.post('/:id/comments', isLoggedIn, profilesCtrl.newComment)
+router.delete('/:profileId/comments/:commentId', isLoggedIn, profilesCtrl.deleteComment)
 
 
 export {
