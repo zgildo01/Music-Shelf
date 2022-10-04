@@ -19,16 +19,10 @@ function show(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
-    const embeddedAlbum = profile.albums.id(req.params.albumsId)
-    .populate('songs')
-    Song.find({_id: {$nin: profile.songs}})
-    .then(songs => {
-      res.render('profiles/show', {
-        title: `${ profile.name }'s profile`,
-        profile,
-        isSelf,
-        songs,
-      })
+    res.render('profiles/show', {
+      title: `${ profile.name }'s profile`,
+      profile,
+      isSelf,
     })
   })
   .catch(err => {
@@ -78,14 +72,19 @@ function deleteAlbum(req, res) {
 
 function showAlbum(req, res) {
   Profile.findById(req.params.profileId)
+  .populate('albums.songs')
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     const embeddedAlbum = profile.albums.id(req.params.albumsId)
-    res.render('albums/show', {
-      title: 'Album Details',
-      album: embeddedAlbum,
-      profile,
-      isSelf,
+    Song.find({_id: {$nin: profile.albums.songs}})
+    .then(songs => {
+      res.render('albums/show', {
+        title: 'Album Details',
+        album: embeddedAlbum,
+        profile,
+        isSelf,
+        songs,
+      })
     })
   })
 }
