@@ -141,6 +141,20 @@ function addToSongs(req, res) {
   })
 }
 
+function newComment(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.comments.push(req.body)
+    profile.save()
+    console.log(profile)
+    res.redirect(`/profiles/${req.user.profile._id}/`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles/')
+  })
+}
+
 export {
   index,
   show,
@@ -151,4 +165,5 @@ export {
   editAlbum,
   updateAlbum,
   addToSongs,
+  newComment,
 }

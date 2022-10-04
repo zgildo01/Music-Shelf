@@ -54,7 +54,31 @@
     <h3 id="no-albums">No Albums Yet :/</h3>
     <%= isSelf ? "Consider adding one?" : "" %> 
   <% } %>
+  <% if (isSelf) { %>
     
+  <% } else { %>
+    <div id="comment-container">
+      <h3>Leave a Comment!</h3>
+      <form id="comment-form" 
+      action="/profiles/<%= profile._id %>/comments" 
+      method="post"
+      >
+        <input type="text" name="content" placeholder="I love your music taste!">
+        <button type="submit">Post</button>
+      </form>
+    </div>
+    <% } %>
+    <!-- <div id="comments">
+      <%# comments.forEach(comment => { %>
+        <img
+        id="profile-img"
+        src="<%# profile.avatar %>"
+        alt="<%# profile.name %>'s avatar"
+        >
+        <p><%# comment.content %></p>
+      <%# }) %>
+    </div> -->
+
 </main>
 
 <%- include('../partials/footer') %>
