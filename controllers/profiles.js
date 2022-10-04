@@ -17,12 +17,19 @@ function index(req, res) {
 
 function show(req, res) {
   Profile.findById(req.params.id)
+  .populate({
+    path: 'comments',
+    populate: {
+      path: 'commenter'
+    }
+  })
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/show', {
       title: `${ profile.name }'s profile`,
       profile,
       isSelf,
+      
     })
   })
   .catch(err => {
@@ -142,12 +149,12 @@ function addToSongs(req, res) {
 }
 
 function newComment(req, res) {
+  req.body.commenter = req.user.profile._id
   Profile.findById(req.params.id)
   .then(profile => {
     profile.comments.push(req.body)
     profile.save()
-    console.log(profile)
-    res.redirect(`/profiles/${req.user.profile._id}/`)
+    res.redirect(`/profiles/${profile._id}/`)
   })
   .catch(err => {
     console.log(err)

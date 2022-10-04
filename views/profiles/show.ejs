@@ -68,16 +68,25 @@
       </form>
     </div>
     <% } %>
-    <!-- <div id="comments">
-      <%# comments.forEach(comment => { %>
+    <div id="comments">
+      <% profile.comments.forEach(comment => { %>
         <img
         id="profile-img"
-        src="<%# profile.avatar %>"
-        alt="<%# profile.name %>'s avatar"
+        src="<%= comment.commenter.avatar %>"
+        alt="<%= comment.commenter.name %>'s avatar"
         >
-        <p><%# comment.content %></p>
-      <%# }) %>
-    </div> -->
+        <h3><%= comment.commenter.name %></h3>
+        <p><%= comment.content %></p>
+        <% if (isSelf) { %>
+          <form
+          action=""
+          method="post"
+          >
+          <button type="submit">Delete Comment</button>
+          </form>
+        <% } %> 
+      <% }) %>
+    </div>
 
 </main>
 
