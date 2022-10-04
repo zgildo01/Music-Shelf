@@ -49,12 +49,24 @@
           <caption>Songs:</caption>
           <thead>
             <tr>
+              <% if (isSelf) { %>
+                <td></td>
+              <% } %>
               <td>Song Name:</td>
               <td>Track Number:</td>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <% if (isSelf) { %>
+                <td>
+                  <a
+                  href="songs/:id"
+                  >
+                    <button>Delete Song?</button>
+                  </a>
+                </td>
+              <% } %>
               <td><%= song.songName %></td>
               <td><%= song.trackNo %></td>
             </tr>

@@ -17,7 +17,20 @@ function create(req, res) {
   })
 }
 
+function deleteSong(req, res) {
+  Song.findByIdAndDelete(req.params.id)
+  .then(song => {
+    console.log(song)
+    res.redirect('/profiles')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/profiles')
+  })
+}
+
 export {
   newSong as new,
   create,
+  deleteSong as delete,
 }

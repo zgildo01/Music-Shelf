@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/new', isLoggedIn, songsCtrl.new)
 router.post('/', isLoggedIn, songsCtrl.create)
+router.delete('/:id', isLoggedIn, songsCtrl.delete)
 
 export {
   router
