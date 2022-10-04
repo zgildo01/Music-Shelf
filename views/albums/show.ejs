@@ -26,26 +26,40 @@
     <a
     href="/songs/new"
     >
-      <button>Add Song</button>>
+      <button>Add Song</button>
     </a>
-    <form id="add-per-to-cast" action="/profiles/<%= profile._id %>/songs" method="POST">
+    <form id="add-song" action="/profiles/<%= profile._id %>/songs" method="POST">
       <select name="songId">
         <% songs.forEach(song => { %>
           <option value="<%= song._id %>"><%= song.songName %></option>
         <% }) %>
       </select>
-      <button type="submit">Add to Meals</button>
+      <button type="submit">Add to Album</button>
     </form>
     <% } %>
   </section>
   <section>
     <% if (album.songs.length) { %>
       <h2>Songs:</h2>
+      <% album.songs.forEach((song)=> { %>
+        <table>
+          <thead>
+            <td>Song Name:</td>
+            <td>Track Number:</td>
+          </thead>
+          <tbody>
+            <tr><%= song.songName %></tr>
+            <tr><%= song.trackNo %></tr>
+          </tbody>
+        </table>
+      <% }) %>
     <% } else { %>
+
       <h2>No Songs Yet :/</h2>
       <% if (isSelf) { %>
         <p>Maybe add some?</p>
       <% } %>
+
     <% } %> 
   </section>
 </main>
