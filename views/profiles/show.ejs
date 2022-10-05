@@ -31,7 +31,9 @@
       <% profile.albums.forEach(album => { %>
         <tr>
           <td>
-            <a href="/profiles/<%= profile._id %>/albums/<%= album._id %>">Show Album</a>
+            <a href="/profiles/<%= profile._id %>/albums/<%= album._id %>">
+            <button class="button-1" role="button">Show</button>
+          </a>
           </td>
           <% if (isSelf) { %>
             <td>
@@ -39,7 +41,7 @@
             action="/profiles/albums/<%= album._id %>?_method=DELETE"
             method="post"
             >
-              <button type="submit">Delete Album?</button>
+              <button type="submit" class="button-1" role="button">Delete</button>
             </form>
           </td>
             <% } %>
@@ -57,26 +59,30 @@
   <% if (isSelf) { %>
     
   <% } else { %>
-    <div id="comment-container">
+    <div id="comments-inp-cont">
       <h3>Leave a Comment!</h3>
       <form id="comment-form" 
       action="/profiles/<%= profile._id %>/comments" 
       method="post"
       >
-        <input type="text" name="content" placeholder="I love your music taste!">
-        <button type="submit">Post</button>
+        <input type="text" name="content" placeholder="I love your music taste!" id="comment-input">
+        <button type="submit" class="button-1" role="button" id="comment-button">Post</button>
       </form>
     </div>
     <% } %>
-    <div id="comments">
+    <div id="comments-container">
       <% profile.comments.forEach(comment => { %>
-        <img
-        id="profile-img"
-        src="<%= comment.commenter.avatar %>"
-        alt="<%= comment.commenter.name %>'s avatar"
-        >
-        <h3><%= comment.commenter.name %></h3>
-        <p><%= comment.content %></p>
+        <div id="comments">
+          <div id="avatar-name">
+            <img
+            id="commenter-prof-img"
+            src="<%= comment.commenter.avatar %>"
+            alt="<%= comment.commenter.name %>'s avatar"
+            >
+            <h3><%= comment.commenter.name %></h3>
+          </div>
+          <p id="comment-content"><%= comment.content %></p>
+        </div>
         <% if (isSelf) { %>
           <form
           action="/profiles/<%= profile._id %>/comments/<%= comment._id %>?_method=DELETE"

@@ -17,3 +17,68 @@ table {
   margin-left: auto;
   margin-right: auto;
 }
+
+#comments-inp-cont {
+  margin: 2rem 0;
+}
+
+#comment-input {
+  height: 40px;
+}
+
+#comment-button{
+  margin: 1rem 0;
+}
+
+#comments {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#avatar-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  border: solid 0.25rem #ff71ce;
+}
+
+#comment-content {
+  border: solid 0.25rem #ff71ce;
+  border-left: none;
+}
+
+#commenter-prof-img {
+  height: 5rem;
+  width: 5rem;
+}
+
+.button-1 {
+  background-color: #ff71ce;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff845;
+  cursor: pointer;
+  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 0.25rem;
+  height: 40px;
+  line-height: 20px;
+  outline: none;
+  text-align: center;
+  transition: color 100ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0 1rem;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
