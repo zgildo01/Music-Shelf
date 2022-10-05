@@ -1,5 +1,5 @@
 #title {
-  margin-top: 10rem;
+  margin-top: 7rem;
 }
 
 #album-details {
@@ -7,7 +7,59 @@
 }
 
 table {
-  margin-top: 3rem;
+  margin-top: 0.25rem;
   margin-left: auto;
   margin-right: auto;
 }
+
+table, th, td {
+  border: 1px solid;
+}
+
+select {
+  background-color: #ff71ce;
+  color: #fff845;
+  height: 40px;
+  padding: 0 10px;
+}
+
+#edit-alb-btn {
+  margin: 1rem 0;
+}
+
+#add-song {
+  margin: 2rem 0;
+}
+
+#add-album {
+  margin: 0;
+}
+
+.button-1 {
+  background-color: #ff71ce;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff845;
+  cursor: pointer;
+  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 0.25rem;
+  height: 40px;
+  line-height: 20px;
+  outline: none;
+  text-align: center;
+  transition: color 100ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0 1rem;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
+

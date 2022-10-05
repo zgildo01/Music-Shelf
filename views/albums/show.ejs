@@ -5,17 +5,15 @@
 <main>
   <h1 id="title"><%= title %></h1>
   <section id="album-details">
-    <div>Album Name:</div>
     <% if (isSelf) { %>
-      <div>
-        <%= album.albumName %>
         <a
         href="/profiles/<%= profile._id %>/albums/<%= album._id %>/edit"
         >
-        <button>Edit Album</button>
+        <button class="button-1" role="button" id="edit-alb-btn">Edit Album</button>
         </a>
-      </div>
     <% } %>
+    <div>Album Name:</div>
+    <div><%= album.albumName %></div>
     <div>Artist Name:</div>
     <div><%= album.artistName %></div>
     <div>Release Date:</div>
@@ -24,18 +22,20 @@
     <a
     href="/songs/new/<%= album._id %>"
     >
-      <button>Add Song</button>
+      <button class="button-1" role="button">Add Song</button>
     </a>
-    <form id="add-song" 
+    <form 
     action="/profiles/<%= profile._id %>/albums/<%= album._id %>/songs" 
     method="POST"
+    id="add-song" 
     >
       <select name="songId">
+        <option value="" disabled selected>Choose a Song</option>
         <% myMusic.forEach(song => { %>
           <option value="<%= song._id %>"><%= song.songName %></option>
         <% }) %>
       </select>
-      <button type="submit">Add to Album</button>
+      <button type="submit" class="button-1" role="button" id="add-album">Add to Album</button>
     </form>
     <% } %>
   </section>
@@ -62,7 +62,7 @@
                   action="/songs/<%= song._id %>/<%= album._id %>?_method=DELETE"
                   method="POST"
                   >
-                    <button>Delete Song</button>
+                    <button class="button-1" role="button">Delete Song</button>
                   </form>
                 </td>
               <% } %>
