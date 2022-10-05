@@ -49,6 +49,7 @@ main {
   background-position: center;
   background-size: cover;
   text-align: center;
+  font-family: 'DotGothic16', sans-serif;
   font-family: 'Press Start 2P', cursive;
   overflow: scroll;
   padding-bottom: 50;
