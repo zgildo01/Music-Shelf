@@ -3,7 +3,7 @@
 
   As someone who's held music near and dear to them, I firmly believe music really shows what kind of person you might be interacting with! Thus the idea of social media + music just made sense (no we're not a myspace clone haha).
 
-## DEPLOYABLE LINK (Coming soon)
+## DEPLOYABLE LINK
   [Music Shelf](https://music-shelf.fly.dev/)
 
 ## SCREENSHOTS (Coming Soon)

@@ -45,7 +45,7 @@
             <% } %>
           <td><%= album.albumName %></td>
           <td><%= album.artistName %></td>
-          <td><%= album.releaseDate %></td>
+          <td><%= album.releaseDate.toDateString() %></td>
         </tr>
       <% }) %>
     </tbody>

@@ -19,7 +19,7 @@
     <div>Artist Name:</div>
     <div><%= album.artistName %></div>
     <div>Release Date:</div>
-    <div><%= album.releaseDate %></div>
+    <div><%= album.releaseDate.toDateString() %></div>
     <% if (isSelf) { %>
     <a
     href="/songs/new/<%= album._id %>"
