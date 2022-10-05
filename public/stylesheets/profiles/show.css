@@ -30,11 +30,16 @@ table {
   margin: 1rem 0;
 }
 
+#delete-btn {
+  margin: 1rem;
+}
+
 #comments {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 #avatar-name {
