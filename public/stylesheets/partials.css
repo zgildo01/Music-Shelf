@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  width: 100%;
 }
 
 /* The Universal Selector */
@@ -21,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 }
 
 nav {
@@ -42,6 +44,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   background-image: url("../images/neat-background.png");
   background-position: center;
   background-size: cover;
@@ -202,3 +205,31 @@ a {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
+@media only screen and (max-width: 460px) {
+  #copyright {
+    font-size: 1.25rem;
+    word-wrap: initial;
+  }
+
+  #footer-title {
+    margin: 2rem;
+    font-size: 1.3rem;
+    word-wrap: normal;
+  }
+
+  #contact-container {
+    margin: 0.5rem;
+  }
+
+  #soc-contact {
+    font-size: 1rem;
+  }
+
+  #email {
+    font-size: 1rem;
+  }
+
+  #footer-a {
+    font-size: 1rem;
+  }
+}
