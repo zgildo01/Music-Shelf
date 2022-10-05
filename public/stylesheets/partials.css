@@ -14,18 +14,17 @@ html {
 }
 
 body {
-  background-color: #01cdfe;
-  color: #fffb96;
+  color: #fff845;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
+  padding: 0;
   height: 100%;
 }
 
 nav {
   background-color: #ff71ce;
-  color: #fffb96;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,6 +34,8 @@ nav {
   min-height: 60px;
   position: fixed;
   width: 100%;
+  position: fixed;
+  z-index: 8;
 }
 
 main {
@@ -46,17 +47,30 @@ main {
   background-size: cover;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
+  overflow: scroll;
+  padding-bottom: 50;
+  position: relative;
 }
 
 footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  min-height: 60px;
+  background-color: #01cdfe;
 }
 
 #contact-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 #google-login {
@@ -72,7 +86,8 @@ footer {
 
 #copyright {
   display: flex;
-  align-items: center
+  align-items: center;
+  margin-right: 0.5rem;
 }
 
 #login-fren {
@@ -83,4 +98,18 @@ footer {
 #logout-fren{
   height: 2rem;
   width: 10rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+#footer-a {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+}
+
+#footer-title {
+  margin-top: 3rem;
 }
