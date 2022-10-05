@@ -75,13 +75,14 @@ footer {
 
 #google-login {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 }
 
 #google-logout {
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 #copyright {
@@ -112,4 +113,14 @@ a {
 
 #footer-title {
   margin-top: 3rem;
+}
+
+#record {
+  height: 2rem;
+  width: 2rem;
+}
+
+#nav-logo {
+  display: flex;
+  flex-direction: row;
 }
