@@ -9,6 +9,7 @@ form {
   grid-template-columns: repeat(2, minmax(auto, 352px));
   font-size: 20px;
   margin-top: 10rem;
+  justify-content: center;
 }
 
 form * {
@@ -22,4 +23,31 @@ form > button {
   width: 160px;
   margin-left: auto;
   font-size: 22px;
+}
+
+/* CSS */
+.button-1 {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff845;
+  cursor: pointer;
+  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  outline: none;
+  text-align: center;
+  transition: color 100ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
 }

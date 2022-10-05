@@ -54,6 +54,7 @@ main {
   overflow: scroll;
   padding-bottom: 50;
   position: relative;
+  color: #05ffa1;
 }
 
 footer {
