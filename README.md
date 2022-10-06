@@ -7,9 +7,10 @@
   [Music Shelf](https://music-shelf.fly.dev/)
 
 ## SCREENSHOTS
-  ![image](image.png)
+  ![image](https://user-images.githubusercontent.com/109769220/194335116-1bd248b0-07bf-42d3-8e45-8c85ab8bb3ff.png)
   
-  ![image](image.png)
+  ![image](https://user-images.githubusercontent.com/109769220/194335296-9dc08be8-2350-4b89-beea-e859a728f9e1.png)
+
 
 
 ## TECHNOLOGIES
