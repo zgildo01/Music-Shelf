@@ -165,7 +165,7 @@ function newComment(req, res) {
 function deleteComment(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.comments.remove({_id: req.params.id})
+    profile.comments.remove({_id: req.params.commentId})
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
