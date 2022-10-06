@@ -15,8 +15,10 @@
 
 ## TECHNOLOGIES
   -HTML
+    -Google Fonts
 
   -CSS
+    -[Site I Got Button Designs From](https://getcssscan.com/css-buttons-examples)
 
   -JavaScript
 
@@ -30,8 +32,8 @@
 
 
 ## PLANNED ITEMS
-  --Login with spotify
+  -Login with spotify
 
-  --Friends List
+  -Friends List
 
-  --Instant Messaging
+  -Instant Messaging
