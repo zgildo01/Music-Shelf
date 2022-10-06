@@ -6,10 +6,10 @@
 ## DEPLOYABLE LINK
   [Music Shelf](https://music-shelf.fly.dev/)
 
-## SCREENSHOTS (Coming Soon)
-  ![image](Placeholder)
+## SCREENSHOTS
+  ![image](image.png)
   
-  ![image](Placeholder)
+  ![image](image.png)
 
 
 ## TECHNOLOGIES
